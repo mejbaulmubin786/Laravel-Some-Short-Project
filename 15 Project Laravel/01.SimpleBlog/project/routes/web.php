@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,8 +11,8 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
- */
+*/
 
-Route::get('/', [HomeController::class, 'homepage']);
-
-route::get('/home', [AdminController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('welcome');
+});
