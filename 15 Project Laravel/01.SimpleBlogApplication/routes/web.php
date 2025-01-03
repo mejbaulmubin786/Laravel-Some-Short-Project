@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [HomeController::class, 'homepage']);
+Route::get('/', function () {
+    return view('welcome');
+});
 
-route::get('/home', [AdminController::class, 'index'])->name('home');
+Route::resource('posts', PostController::class);
